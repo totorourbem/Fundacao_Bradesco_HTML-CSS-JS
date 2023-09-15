@@ -1,0 +1,231 @@
+/*CSS para paginna principal e filhas*/
+*{
+    margin : 0;
+    padding : 0;
+}
+body{
+    margin: 0 !important;  /* Defina a margem para 0 para substituir a margem padrão do user agent */
+}
+.container_principal{
+    display: contents;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #777;
+}
+header{
+    width: 100%;
+    height: 30%;/*100%; - parece ser incompativel com o resto*/
+    background-color: #fff;
+    position: relative;
+    top: 0;
+}
+.logo{
+    position: absolute; /*a div logo terá como coordenada inicial o top-left de seu pai, no caso, <header>*/
+    width: 300px;
+    height: auto; /*largura fixa, altura variável para adptar-se a sua <div>*/
+}
+.logo img{
+    width: 90%;
+    margin-left: 10% !important; /*técninca de alinhamento da imagem do logo, em referencia a .logo. Redução para acomodar a imagem na div (280 de largura da imagem +20 de margem à esqueda*/ 
+}
+nav{
+    position: relative; /*Estav a fazendo os links ficarem sobrepostos nas outras paginas. coomo absolute*/
+    right: 30 px;
+    bottom: 0 px;
+}
+nav ul li{
+    float: left; /*parâmetro para aninhamneto da lista Com os valores de float e de margem , força a lista para flutuar a esquerda*/
+    color: #fff;
+    width: auto;
+    margin: 0.8 em; /*para dar espaçamento enmtre os itens da lista*/
+    font-size: 1,5 em; /*para a fonte se adequar a tela*/
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #bbb;
+}
+nav ul li a:hover{
+    color: #b13030;
+}
+#banner{
+    width: 100%;
+}
+#banner img{
+    width: 100%;
+    margin-bottom: 0;
+}
+.modalDialog{ /*Comportamento de modalDialog "em repouso" */
+    position: fixed; /*determina elemento fixo, sem se mover na pagina*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; /*truque, seta esses elementos como zero para que o elemento tenha tamanho de 100%, isso soó funciona com posição fixa*/
+    background: rgba(181, 0, 0, 0);
+    z-index: 9999; /*força os módulos acima da página*/
+    /*este ponto para baixo, as conf de  motor de renderização tem de ser  verificadas com as coordenadas originais e ir ajustando para otimizar resultado*/
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none; /*não permite influência do mouse*/
+    display: none; /*não permite exibição*/
+}
+.modalDialog:target{ /*Comportamento de modalDialog quando algo de ação do usuário*/
+    display: block; /*deixa a div visivel*/
+    opacity: 1; /*determina opcidade conforme clica no link, ativando a transição*/
+    pointer-events: auto; /*permite eintereação entre as divis*/
+}
+.modalDialog div{
+    width: 500px;
+    position: relative;
+    margin: 10% auto; /*Apenas uma definida, para que o navegador ajuste de maneira centralizada*/
+    padding: 5px 20px 13px 20px; /*top, left, bottom, right*/
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px; /*Cantos arrendodados pelo motor de rendereização*/
+    border-radius: 10px; /*cantos arrendodados pelo CSS*/
+    background-color: #fff;
+}
+.modalDialog p{
+    margin-top: 5%;
+    margin-bottom: 5%; /*Alinhamento dos parágrafos*/
+}
+.modalDialog img{
+    width: 50%;
+    position: relative;
+    margin-left: 25%;
+}
+.close{ /*para tornar modalDialog invisivel novamente, alterando as mificaçoes setadas em :target*/
+    background-color: #606061;
+    color: #fff;
+    line-height: 25px; /*altura de cada linha de texto*/
+    position: absolute;
+    right: -12px;
+    top: -10px;
+    width: 24px; /*configurações de posicionamento*/
+    text-decoration: none;
+    text-align: center;
+    font-weight: bolder;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px; 
+    border-radius: 12px; 
+}
+.close:hover{ /*comportamento de close com o mouse*/
+    background-color: #650909;
+}
+footer{
+    width: 100%;
+    height: 18%;
+    background-color: #b50909;
+    color: #fff;
+    position: relative;
+    float: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.footer-text {
+    width: 30%; 
+    margin: 1%; /*com isso cada bloquiunho de texto ocupa aproximadamente um terço da tela com espaço*/
+    position: relative;
+    float:left /*Para manter os texto alinhados*/
+}
+.footer-text a{
+    color: #fff;/*aninhamento*/
+}
+.color_page{
+    display: contents;
+    background-color: #ddd; /*Essa classe em específico altera a cor de fundo das páginas cujo body faça parte da class*/
+}
+/*mantem essa imagem à esquerda, seguindo um redimensionamento definido pelos outros atributos, a imagem tera 90% do tamanhp da div pai*/
+.img_titulo{
+    width: 20%;
+    height: auto;
+    margin-bottom: 10px;
+    position: relative;
+    float: left;
+    margin-right: 5%; 
+}
+.img_titulo img {
+    width: 90%;
+    margin-left: 10%;
+    margin-top: 50px;
+}
+#container_sobre{
+    width:65%; 
+    margin-left:5%;
+    float: left; 
+    position: relative; 
+    height: 80%; 
+    background-color: #fff; 
+    top: 10%;
+}
+#txt_sobre {
+    width:40%; 
+    float: left; 
+    position: relative; 
+    padding: 5%
+}
+#txt_sobre p{
+    width:100%;
+    position: relative;
+    float: left; 
+}
+#txt_sobre dl{
+    width: 50%;
+}
+#img_sobre_ilu{
+    width: 45%; 
+    position: relative;
+    float: left; 
+    padding: 2%
+}
+#img_sobre_ilu img{
+    width: 100%;
+}
+/* definir as propriedades da página contato */
+#txt-contato {
+    width: 100%; 
+    height: 100%;
+}
+#txt-contato form {
+    width:38%; 
+    position: relative; 
+    float: left; 
+    background-color: #fff; 
+    padding: 2%;
+    top: 5%; 
+    min-height: 400px;
+}
+#txt-contato form label {
+    font-weight: bold;
+}
+#txt-contato form input {
+    max-width: 100%; 
+    width: 99%; 
+    height: 30px; 
+    margin-top: 10px;
+    margin-bottom: 15px; 
+    border: solid #b50909 1px; 
+    padding-left: 1%;
+}
+#txt-contato form textarea {
+    max-width: 100%;
+    width: 99%; 
+    border: solid #b50909 1px; 
+    padding-left: 1%;
+    min-height: 100px;
+}
+#txt-contato form button {
+    width: 30%; 
+    height: auto; 
+    cursor: pointer; 
+    background-color: #b50909;
+    color: #fff; 
+    font-size: 1.5em; 
+    padding: 15px 0 15px 0; 
+    margin-left: 35%; 
+    margin-top: 1%;
+}
+#container_sobre > div {
+    display: inline-block;
+    vertical-align: top; /* Isso ajuda a alinhar os elementos no topo */
+}
