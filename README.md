@@ -1,6 +1,3 @@
-
-paginas web confeccionadas nos cursos de HTML5, CSS3 e JavaScript da Fundação Bradesdco
-
 # Fundacão Bradesco HTML-CSS-JS
 
 ![HTML5](https://img.shields.io/static/v1?label=HTML5&labelColor=00ced1&message=ok!✔&style=plastic&color=orange&logo=HTML5&logoColor=orange)
